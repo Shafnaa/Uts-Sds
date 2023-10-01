@@ -20,7 +20,7 @@ func InsertData(c *fiber.Ctx) error {
 	database.DB.Create(&user)
 
 	return c.JSON(fiber.Map{
-		"Pesan": "testing fork and clone",
+		"Pesan": "Data telah berhasil di tambahkan",
 	})
 }
 
