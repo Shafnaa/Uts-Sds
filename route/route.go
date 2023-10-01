@@ -13,7 +13,7 @@ func InsertData(c *fiber.Ctx) error {
 	//Tulis Jawaban Code di Sini :))
 
 	return c.JSON(fiber.Map{
-		"Pesan": "Data telah berhasil di tambahkan",
+		"Pesan": "testing fork and clone",
 	})
 }
 
