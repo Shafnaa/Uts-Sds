@@ -11,6 +11,13 @@ import (
 func InsertData(c *fiber.Ctx) error {
 
 	//Tulis Jawaban Code di Sini :))
+	user := new(models.User)
+
+	if err := c.BodyParser(user); err != nil {
+		return c.Status(503).SendString(err.Error())
+	}
+
+	database.DB.Create(&user)
 
 	return c.JSON(fiber.Map{
 		"Pesan": "testing fork and clone",
@@ -19,28 +26,26 @@ func InsertData(c *fiber.Ctx) error {
 
 // Lengkapi Code Berikut untuk untuk Mengambil data untuk semua user - user
 func GetAllData(c *fiber.Ctx) error {
+	var user []models.User
 
-	
+	database.DB.Find(&user)
 
-	return c.JSON(fiber.Map{
-		"data": user,
-	})
-
+	return c.JSON(user)
 }
 
 //Lengkapi Code berikut Untuk Mengambil data dari id_user berdasarkan Parameter
 
 func GetUserByid(c *fiber.Ctx) error {
+	user := new(models.User)
 
+	id := c.Params("id_user")
 
+	database.DB.Find(&user, id)
 
-	return c.JSON(fiber.Map{
-		"data": user,
-	})
+	return c.JSON(user)
 }
 
 func Delete(c *fiber.Ctx) error {
-
 	var user models.User
 
 	id_user := c.Params("id_user")
@@ -54,7 +59,6 @@ func Delete(c *fiber.Ctx) error {
 
 // mengupdate data user berdasarkan id_user yang di tempatkan di parameter
 func Update(c *fiber.Ctx) error {
-
 	id_user := c.Params("id_user")
 
 	var data map[string]string
@@ -78,6 +82,5 @@ func Update(c *fiber.Ctx) error {
 
 	return c.JSON(fiber.Map{
 		"Pesan": "Data User telah di Update",
-	
 	})
 }

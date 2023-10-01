@@ -3,8 +3,10 @@ package models
 
 type User struct {
 	Id_user uint `json:"id_user" gorm:"primaryKey;autoIncrement:true"`
-	Nama, Email , Username string
-	Password string
+	Nama string `json:"nama"`
+	Email string `json:"email"`
+	Username string `json:"username"`
+	Password string `json:"password"`
 } 
 
 //Tulis jawab code nya di sini 
