@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "ddd6e30e-c60b-421d-910e-3e2aac915ba1",
+		"name": "MidTest SDS SE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23926475"
+	},
+	"item": [
+		{
+			"name": "getData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/getData",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDataByid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/getDataUser/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getDataUser",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama",
+							"value": "malik",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "malik@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "malikk",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "malik123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateData",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama",
+							"value": "imam",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "imam@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "imam123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/update/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"update",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeData",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/delete/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
